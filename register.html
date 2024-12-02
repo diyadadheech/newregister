@@ -17,9 +17,6 @@
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="phone">Phone Number:</label>
-            <input type="text" id="phone" name="phone" required>
-
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
 
@@ -32,18 +29,21 @@
         $(document).ready(function () {
             $("#registrationForm").on("submit", function (e) {
                 e.preventDefault();
-                
-                $.post("register.php", {
-                    name: $("#name").val(),
-                    email: $("#email").val(),
-                    phone: $("#phone").val(),
-                    password: $("#password").val()
-                }, function (response) {
-                    alert(response.message);
-                    if (response.success) {
-                        window.location.href = "login.html";
-                    }
-                }, "json");
+
+                const email = $("#email").val();
+                const password = $("#password").val();
+
+                if (localStorage.getItem(email)) {
+                    alert("Email is already registered!");
+                } else {
+                    const userData = {
+                        name: $("#name").val(),
+                        password: password
+                    };
+                    localStorage.setItem(email, JSON.stringify(userData));
+                    alert("Registration successful!");
+                    window.location.href = "login.html";
+                }
             });
         });
     </script>
