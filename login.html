@@ -25,16 +25,17 @@
         $(document).ready(function () {
             $("#loginForm").on("submit", function (e) {
                 e.preventDefault();
-                
-                $.post("login.php", {
-                    email: $("#email").val(),
-                    password: $("#password").val()
-                }, function (response) {
-                    alert(response.message);
-                    if (response.success) {
-                        window.location.href = "welcome.html";
-                    }
-                }, "json");
+
+                const email = $("#email").val();
+                const password = $("#password").val();
+                const userData = JSON.parse(localStorage.getItem(email));
+
+                if (userData && userData.password === password) {
+                    alert("Logged in successfully!");
+                    window.location.href = "welcome.html";
+                } else {
+                    alert("Invalid email or password!");
+                }
             });
         });
     </script>
