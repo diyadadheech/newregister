@@ -19,23 +19,35 @@
 
             <button type="submit">Login</button>
         </form>
+        <p>Don't have an account? <a href="register.html">Register here</a></p>
     </div>
 
     <script>
         $(document).ready(function () {
+            // Fade-in effect for the container
+            $(".container").hide().fadeIn(1000);
+
+            // Form submission handling with validation
             $("#loginForm").on("submit", function (e) {
                 e.preventDefault();
-
+                
                 const email = $("#email").val();
                 const password = $("#password").val();
                 const userData = JSON.parse(localStorage.getItem(email));
 
                 if (userData && userData.password === password) {
-                    alert("Logged in successfully!");
-                    window.location.href = "welcome.html";
+                    alert("Login successful!");
+                    window.location.href = "welcome.html"; // Navigate to welcome page
                 } else {
-                    alert("Invalid email or password!");
+                    alert("Invalid email or password. Please try again!");
                 }
+            });
+
+            // Add focus animation on input fields
+            $("input").focus(function () {
+                $(this).css("background-color", "#e0f7fa");
+            }).blur(function () {
+                $(this).css("background-color", "#fff");
             });
         });
     </script>
