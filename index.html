@@ -10,28 +10,10 @@
 <body>
     <div class="container">
         <h1>Welcome to Our Website</h1>
-        <p>To get started:</p>
         <ul>
             <li><a href="register.html">Register</a></li>
             <li><a href="login.html">Login</a></li>
         </ul>
     </div>
-
-    <script>
-        $(document).ready(function () {
-            // Fade in the container when the page loads
-            $(".container").hide().fadeIn(1000);
-
-            // Animate the links on hover
-            $("a").hover(
-                function () {
-                    $(this).animate({ padding: "15px 25px" }, 200);
-                },
-                function () {
-                    $(this).animate({ padding: "10px 20px" }, 200);
-                }
-            );
-        });
-    </script>
 </body>
 </html>
