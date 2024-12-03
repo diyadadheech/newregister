@@ -27,26 +27,21 @@
 
     <script>
         $(document).ready(function () {
-            // Custom validation for email format and password length
             $("#registrationForm").on("submit", function (e) {
                 e.preventDefault();
-                let email = $("#email").val();
-                let password = $("#password").val();
-                
-                if (!validateEmail(email)) {
-                    alert("Please enter a valid email address.");
-                } else if (password.length < 6) {
-                    alert("Password must be at least 6 characters long.");
+                const email = $("#email").val().trim();
+                const password = $("#password").val().trim();
+                const name = $("#name").val().trim();
+
+                if (localStorage.getItem(email)) {
+                    alert("This email is already registered.");
                 } else {
+                    const userData = { name, password };
+                    localStorage.setItem(email, JSON.stringify(userData));
                     alert("Registration successful!");
-                    // Proceed to save or navigate
+                    window.location.href = "login.html";
                 }
             });
-
-            function validateEmail(email) {
-                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return emailPattern.test(email);
-            }
         });
     </script>
 </body>
