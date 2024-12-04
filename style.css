@@ -54,3 +54,24 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+#userDetails button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#userDetails button:hover {
+    background-color: #218838;
+}
+select, input[type="tel"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
