@@ -7,14 +7,14 @@ body {
     color: #333;
 }
 
-/* Container Styles */
+/* Container Styles - Increased width */
 .container {
-    max-width: 600px;
+    max-width: 500px;  /* Increased width */
     margin: 50px auto;
     padding: 30px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
+    border-radius: 10px;
     text-align: center;
 }
 
@@ -23,14 +23,15 @@ h1, h2 {
     color: #444;
 }
 
-/* Form Elements */
+/* Form Elements - Adjusted Alignment */
 input, select {
     display: block;
-    width: 80%;  /* Reduced width */
-    padding: 10px;
-    margin: 10px auto;  /* Centered fields */
+    width: 90%;  /* Full width with padding */
+    padding: 12px;
+    margin: 10px auto;
     border-radius: 5px;
     border: 1px solid #ccc;
+    text-align: left;  /* Align text to the left */
 }
 
 /* Button Styles */
@@ -38,12 +39,12 @@ button {
     background-color: #007bff;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 12px 20px;
     margin: 10px 0;
-    width: 60%;  /* Matching reduced width */
+    width: 90%;  /* Matching form width */
     cursor: pointer;
     font-size: 16px;
-    border-radius: 4px;
+    border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
@@ -51,7 +52,7 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Special Buttons (For Success Messages) */
+/* Special Buttons */
 #userDetails button {
     background-color: #28a745;
     color: white;
@@ -59,7 +60,7 @@ button:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    width: 80%;  /* Matching reduced width */
+    width: 90%;  /* Matching form width */
 }
 
 #userDetails button:hover {
@@ -75,8 +76,8 @@ a {
     padding: 10px;
     border-radius: 5px;
     background-color: #007bff;
-    width: 80%;  /* Matching reduced width */
-    margin: 10px auto;  /* Centered links */
+    width: 90%;
+    margin: 10px auto;
 }
 
 a:hover {
