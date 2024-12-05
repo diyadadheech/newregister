@@ -26,9 +26,9 @@ h1, h2 {
 /* Form Elements */
 input, select {
     display: block;
-    width: 100%;
+    width: 80%;  /* Reduced width */
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px auto;  /* Centered fields */
     border-radius: 5px;
     border: 1px solid #ccc;
 }
@@ -40,7 +40,7 @@ button {
     border: none;
     padding: 12px 20px;
     margin: 10px 0;
-    width: 100%;
+    width: 80%;  /* Matching reduced width */
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
@@ -59,6 +59,7 @@ button:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 80%;  /* Matching reduced width */
 }
 
 #userDetails button:hover {
@@ -74,6 +75,8 @@ a {
     padding: 10px;
     border-radius: 5px;
     background-color: #007bff;
+    width: 80%;  /* Matching reduced width */
+    margin: 10px auto;  /* Centered links */
 }
 
 a:hover {
